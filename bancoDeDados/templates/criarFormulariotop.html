@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+    <div class="bloco">
+        <div class="bloco-cabecalho">
+            <h1>Criar Carga</h1> 
+            <hr>
+        </div>
+
+        <div class="bloco-corpo">
+            
+            <form action="." method='POST'>{% csrf_token %}
+                {{ form.as_table }}
+                <input type="submit" value="Salve" />
+            </form>
+            
+
+        </div>
+
+
+
+    </div>
+{% endblock corpo %}
+

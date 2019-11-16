@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+    <div class="bloco">
+        <div class="bloco-cabecalho">
+            <h1>{{obj.nome}}</h1> 
+            <h2>Potência: {{obj.potenciaCircuitoLuminaria}} Watts</h2>
+            <hr>
+        </div>
+    </div>
+
+    </br>
+
+        
+    {% for c in cargas %}
+
+        <div class="bloco">
+            <div class="bloco-cabecalho">
+                <h3> {{c.tipoDaCarga}} </h3>  
+            </div>
+
+            <div class="bloco-corpo">
+                <p>{{ c.descricao }}</p>
+
+                <p><u>Potência:</u> {{c.potencia}} Watts</p> 
+            </div>
+        
+        </div>
+
+        </br>
+                
+    {% empty %}
+
+        <div class="bloco">
+
+            <div class="bloco-corpo">
+                <p>Sem Cargas.</p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+    
+{% endblock corpo %}
+
+    
+
+{% block menu %}
+    
+    {% if obj.chaveLocal.chaveArea != None %}
+    
+        <div class="menu-link-voltar">
+            <a href= "{% url 'area' obj.chaveLocal.chaveArea.id %}">{{obj.chaveLocal.chaveArea.nome}}</a>
+            <hr>
+        </div>
+
+    {% endif %}
+    
+        
+        <div class="menu-link-voltar">
+            <a href= "{% url 'area' obj.chaveLocal.id %}">{{obj.chaveLocal.nome}}</a>
+            <hr>
+        </div>
+
+    
+    
+
+{% endblock menu %}
+

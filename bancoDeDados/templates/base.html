@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<link href="https://fonts.googleapis.com/css?family=B612&display=swap" rel="stylesheet"> 
+
+<style>
+
+a, u{
+    text-decoration: none;
+    color:black;
+}
+
+#cabecalho{
+    background: #6ccbd8;
+    position:fixed;
+    top:0px;
+    left:0px;
+    height:80px;
+    width:100%;
+    z-index:2;
+}
+
+#corpo{
+    background: #ffffff;
+    position: relative;
+    top: 90px;
+    left: 400px;
+    width: 600px;
+    z-index:1;
+}
+
+#menu{
+    background: #ffffff;
+    position: fixed;
+    top: 100px;
+    left: 200px;
+    width: 180px;
+    z-index:1;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+
+.bloco{
+    font-family: B612, monospace;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.bloco-cabecalho{
+    margin:10px;
+}
+
+.bloco-corpo{
+    margin:10px;
+}
+
+.menu-link{
+    font-family: B612, monospace;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.menu-link-voltar{
+    font-family: B612, monospace;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+
+</style>
+
+
+
+<div id="cabecalho">
+</div>
+
+<div id="menu">
+    
+    
+
+    <div class="menu-link">
+        <hr>
+        <a href= "{% url 'paginainicial' %}">Início</a>
+        <hr>
+    </div>
+
+    
+
+    <div class="menu-link">
+        <a href= "{% url 'sobre' %}">Sobre</a>
+        <hr>
+    </div>
+    
+    
+
+    <div class="menu-link">
+        <a href= "{% url 'bancodedados' %}">Banco De Dados</a>
+        <hr>
+    </div>
+    
+
+
+   {% block menu %}
+   {% endblock menu %}
+
+</div>
+
+<div id="corpo">
+
+   {% block corpo %}
+   {% endblock corpo %}
+
+</div>
+
+
+

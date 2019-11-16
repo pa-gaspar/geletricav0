@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+    <div class="bloco">
+        <div class="bloco-cabecalho">
+            <h1>{{obj.nome}}</h1> 
+            <hr>
+        </div>
+    </div>
+
+    </br>
+
+        
+    {% for s in subAreas %}
+
+        <div class="bloco">
+            <div class="bloco-cabecalho">
+                <h3><a href="{% url 'bancodedados' %}{{ s.id }}/">{{ s.nome }}</a></h3>  
+            </div>
+
+            <div class="bloco-corpo">
+                {{ s.descricao }} 
+            </div>
+        
+        </div>
+
+        </br>
+                
+    {% empty %}
+
+        <div class="bloco">
+
+            <div class="bloco-corpo">
+                <p>Sem sub-áreas.</p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+    <hr>
+
+    {% for l in locais %}
+
+        <div class="bloco">
+            <div class="bloco-cabecalho">
+                <h3><a href="{{ l.id }}/">{{ l.nome }}</a></h3>  
+            </div>
+
+            <div class="bloco-corpo">
+                {{ l.descricao }} 
+            </div>
+        
+        </div>
+
+        </br>
+                
+    {% empty %}
+
+        <div class="bloco">
+
+            <div class="bloco-corpo">
+                <p>Sem locais.</p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+        
+{% endblock corpo %}
+
+    
+
+{% block menu %}
+    
+    {% if obj.chaveArea != None %}
+    
+        <div class="menu-link-voltar">
+            <a href= "{% url 'bancodedados' %}{{obj.chaveArea.id}}/">{{obj.chaveArea.nome}}</a>
+            <hr>
+        </div>
+
+    
+    {% endif %}
+
+{% endblock menu %}
+

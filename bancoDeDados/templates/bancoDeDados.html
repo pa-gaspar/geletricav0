@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+    <div class="bloco">
+        <div class="bloco-cabecalho">
+            <h1>Banco De Dados</h1> 
+            <hr>
+        </div>
+    </div>
+
+    </br>
+
+        
+    {% for o in obj %}
+
+        <div class="bloco">
+            <div class="bloco-cabecalho">
+                <h3><a href="{{ o.id }}/">{{ o.nome }}</a></h3>  
+            </div>
+
+            <div class="bloco-corpo">
+                {{ o.descricao }} 
+            </div>
+        
+        </div>
+
+        </br>
+                
+    {% empty %}
+
+        <div class="bloco">
+
+            <div class="bloco-corpo">
+                <p>Não há áreas cadastradas.</p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+        
+{% endblock corpo %}

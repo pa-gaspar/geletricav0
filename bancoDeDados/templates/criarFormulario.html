@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+    <div class="bloco">
+        <div class="bloco-cabecalho">
+            <h1>Criar Carga</h1> 
+            <hr>
+        </div>
+
+        <div class="bloco-corpo">
+            
+            <form action="." method="POST" >  {% csrf_token %}
+                Tipo:
+                <select name="tipo">
+                    {% for t in tipo  %}
+                    
+                        <option name="{{t.nome}}">{{t.nome}}</option>
+                    
+                    {% endfor %}
+                </select>
+
+                <br>
+
+                Descrição: <input type="text" name="descricao" placeholder="Descrição">
+
+                <br>
+
+                Potência (Watts): <input type="number" name="potencia" >
+            <input type="submit" value="Save" />
+            </form>
+
+            
+
+        </div>
+
+
+
+    </div>
+{% endblock corpo %}
