@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '@nwd*!wk76nz0b=%w8n+t6+8)sr+4_
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['murmuring-dawn-49184.herokuapp.com']
 
 
 # Application definition
