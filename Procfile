@@ -1,0 +1,1 @@
+web: gunicorn geletrica.wsgi --log-file -
