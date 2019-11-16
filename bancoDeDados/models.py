@@ -20,8 +20,8 @@ class cargaTipo(models.Model):
 #carga: É o modelo das cargas elétricas no ambiente.
 class carga(models.Model): 
     #tipoDaCarga: é o tipo da carga. Só pode ser escolhido um dos tipos de carga disponiveis.
-    tipoDaCarga = models.CharField(max_length=80, blank=True,
-                                  choices = cargaTipo.objects.all().values_list('nome','nome'))
+    #tipoDaCarga = models.CharField(max_length=80, blank=True,
+    #                              choices = cargaTipo.objects.all().values_list('nome','nome'))
     
     #descricao: descrição dessa carga. Características físicas e de funcionamento.
     descricao = models.CharField(max_length=300)

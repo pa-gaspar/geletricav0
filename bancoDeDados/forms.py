@@ -26,5 +26,5 @@ class cargaForm(forms.ModelForm):
 class cargaForm(forms.ModelForm):
     class Meta:
         model = carga
-        fields = ["tipoDaCarga", "descricao", "potencia","chaveCarga"]
-        #fields = [ "descricao", "potencia","chaveCarga"]
+        #fields = ["tipoDaCarga", "descricao", "potencia","chaveCarga"]
+        fields = [ "descricao", "potencia","chaveCarga"]
